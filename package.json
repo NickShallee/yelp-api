@@ -1,0 +1,19 @@
+{
+  "name": "yelp-api",
+  "version": "0.1.0",
+  "description": "A JavaScript interface for the Yelp Fusion API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "yelp",
+    "api"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.83.0",
+    "requirejs": "^2.3.5"
+  }
+}

@@ -1,0 +1,17 @@
+let clientId = 'WUlV_fzLxqFJwEKe39OPyA';
+let apiKey = 'wT6UUhiqEtBgZ_WfbLcahIYJ5QsizB9TwjU1YzEWrthQ8y-81Spbh0E59rWfkXE5v0wEyF9ZK64n0YqgVXH9qyzzQRB8w9D1HGcymJROwrCiEG666xsa-7DptEFIWnYx';
+let clientSecret = 'MtFw4L5bngt3JKY7o3LAx4jYUpZow32yZkkg06KckGzWUMlfrptEbNxTmiP8GPCj';
+
+axios = require('axios');
+
+axios.post('https://api.yelp.com/oauth2/token', {
+	grant_type: 'client_credentials',
+	client_id: clientId,
+	client_secret: clientSecret
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
