@@ -9,20 +9,31 @@ app.get('/', (req, res) => {
 	res.send('Hello World!')
 })
 
-var clientId = 'WUlV_fzLxqFJwEKe39OPyA';
-var clientSecret = 'MtFw4L5bngt3JKY7o3LAx4jYUpZow32yZkkg06KckGzWUMlfrptEbNxTmiP8GPCj';
-var yelp = new yelpAPI(clientId, clientSecret);
+var apiKey = 'wT6UUhiqEtBgZ_WfbLcahIYJ5QsizB9TwjU1YzEWrthQ8y-81Spbh0E59rWfkXE5v0wEyF9ZK64n0YqgVXH9qyzzQRB8w9D1HGcymJROwrCiEG666xsa-7DptEFIWnYx';
 
-yelp.connect().then(function (res) {
-    console.log(res);
+var yelp = new yelpAPI(apiKey);
 
-    yelp.get('businesses/search', [{
-    	location: '22206'
-    }]);
+/*
 
+businesses/search
+businesses/search/phone
+transactions/{transaction_type}/search
+businesses/{id}
+businesses/matches/best
+businesses/matches/lookupbusinesses/{id}/reviews
+autocomplete
+events/{id}
+events
+events/featured
 
-}, rej => {
-  console.log(rej);
+*/
+
+yelp.query('businesses/search', [{ location: '22206' }])
+.then(data => {
+	console.log(data);
+})
+.catch(err => {
+	console.log(err);
 });
 
 
