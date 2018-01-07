@@ -4,11 +4,11 @@
   "description": "A JavaScript interface for the Yelp Fusion API.",
   "main": "yelp-api.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/jshint/bin/jshint yelp-api.js"
   },
-  "repository" :
-  { "type" : "git"
-  , "url" : "https://github.com//NickShallee/yelp-api.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//NickShallee/yelp-api.git"
   },
   "keywords": [
     "yelp",
@@ -17,6 +17,7 @@
   "author": "Nick Shallee (nick@aureliacasts.com)",
   "license": "MIT",
   "dependencies": {
+    "jshint": "^2.9.5",
     "request": "^2.83.0",
     "requirejs": "^2.3.5"
   }
