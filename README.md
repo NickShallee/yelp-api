@@ -88,8 +88,6 @@ yelp.query(`transactions/${transactionType}/search`, params)
 ### Business API
 This endpoint returns the detail information of a business.  More details [here](https://www.yelp.com/developers/documentation/v3/business).
 
-businesses/{id}
-
 ```javascript
 // Create a new yelpAPI object with your API key
 let apiKey = 'YOUR_API_KEY';
@@ -179,7 +177,7 @@ let params = [{ locale: 'en_US' }];
 let businessId = 'four-barrel-coffee-san-francisco';
 
 // Call the endpoint
-yelp.query(`/businesses/${businessId}/reviews`, params)
+yelp.query(`businesses/${businessId}/reviews`, params)
 .then(data => {
   // Success
   console.log(data);
@@ -193,23 +191,94 @@ yelp.query(`/businesses/${businessId}/reviews`, params)
 ### Autocomplete API
 This endpoint returns autocomplete suggestions for search keywords, businesses and categories, based on the input text.  More details [here](https://www.yelp.com/developers/documentation/v3/autocomplete).
 
-autocomplete
+```javascript
+// Create a new yelpAPI object with your API key
+let apiKey = 'YOUR_API_KEY';
+let yelp = new yelpAPI(apiKey);
+
+// Set any parameters, if applicable (see API documentation for allowed params)
+let params = [{ text: 'Panuccis Pizza' }];
+
+// Call the endpoint
+yelp.query('autocomplete', params)
+.then(data => {
+  // Success
+  console.log(data);
+})
+.catch(err => {
+  // Failure
+  console.log(err);
+});
+```
 
 ### Event Lookup API
 This endpoint returns the detailed information of a Yelp event.  To enable this endpoint, you must first join the Yelp Developer Beta Program.  More details [here](https://www.yelp.com/developers/documentation/v3/event).
 
-events/{id}
+```javascript
+// Create a new yelpAPI object with your API key
+let apiKey = 'YOUR_API_KEY';
+let yelp = new yelpAPI(apiKey);
+
+// Set any parameters, if applicable (see API documentation for allowed params)
+let params = [{ locale: 'en_US' }];
+let eventId = 'oakland-saucy-oakland-restaurant-pop-up';
+
+// Call the endpoint
+yelp.query(`events/${eventId}`, params)
+.then(data => {
+  // Success
+  console.log(data);
+})
+.catch(err => {
+  // Failure
+  console.log(err);
+});
+```
 
 ### Event Search API
 This endpoint returns events based on the provided search criteria.  To enable this endpoint, you must first join the Yelp Developer Beta Program.  More details [here](https://www.yelp.com/developers/documentation/v3/event_search).
 
-events
+```javascript
+// Create a new yelpAPI object with your API key
+let apiKey = 'YOUR_API_KEY';
+let yelp = new yelpAPI(apiKey);
+
+// Set any parameters, if applicable (see API documentation for allowed params)
+let params = [{ locale: 'en_US' }];
+
+// Call the endpoint
+yelp.query('events', params)
+.then(data => {
+  // Success
+  console.log(data);
+})
+.catch(err => {
+  // Failure
+  console.log(err);
+});
+```
 
 ### Featured Event API
 This endpoint returns the featured event for a given location.  To enable this endpoint, you must first join the Yelp Developer Beta Program.  More details [here](https://www.yelp.com/developers/documentation/v3/featured_event).
 
-events/featured
+```javascript
+// Create a new yelpAPI object with your API key
+let apiKey = 'YOUR_API_KEY';
+let yelp = new yelpAPI(apiKey);
 
+// Set any parameters, if applicable (see API documentation for allowed params)
+let params = [{ location: '20002' }];
+
+// Call the endpoint
+yelp.query('events/featured', params)
+.then(data => {
+  // Success
+  console.log(data);
+})
+.catch(err => {
+  // Failure
+  console.log(err);
+});
 
 ## Contributing
 I would very much appreciate your contributions to this project  Make any pull requests on the [GitHub repo](https://github.com/NickShallee/yelp-api).
