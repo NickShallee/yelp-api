@@ -1,4 +1,5 @@
 # yelp-api
+
 [![Build Status](https://travis-ci.org/NickShallee/yelp-api.svg?branch=master)](https://travis-ci.org/NickShallee/yelp-api)
 
 This package provides a programmatic JavaScript interface for the Yelp Fusion API.  The Yelp Fusion API Documentation can be viewed [here](https://www.yelp.com/developers/documentation/v3).
