@@ -4,7 +4,7 @@ This package provides a programmatic JavaScript interface for the Yelp Fusion AP
 In order to use this package, you must first get a Yelp Fusion API Key.
 
 ### Installing
-Simple use NPM to install the package.
+Simply use npm to install the package.
 
 ```
 npm install yelp-api --save
