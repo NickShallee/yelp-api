@@ -301,6 +301,7 @@ yelp.query('events/featured', params)
   // Failure
   console.log(err);
 });
+```
 
 ## Contributing
 I would very much appreciate your contributions to this project  Make any pull requests on the [GitHub repo](https://github.com/NickShallee/yelp-api).
