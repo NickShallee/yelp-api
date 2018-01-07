@@ -1,6 +1,8 @@
 # yelp-api
-
+[![npm version](https://badge.fury.io/js/yelp-api.svg)](https://badge.fury.io/js/yelp-api)
 [![Build Status](https://travis-ci.org/NickShallee/yelp-api.svg?branch=master)](https://travis-ci.org/NickShallee/yelp-api)
+[![Dependency Status](https://david-dm.org/NickShallee/yelp-api.svg)](https://david-dm.org/NickShallee/yelp-api)
+[![devDependency Status](https://david-dm.org/NickShallee/yelp-api/dev-status.svg)](https://david-dm.org/NickShallee/yelp-api#info=devDependencies)
 
 This package provides a programmatic JavaScript interface for the Yelp Fusion API.  The Yelp Fusion API Documentation can be viewed [here](https://www.yelp.com/developers/documentation/v3).
 

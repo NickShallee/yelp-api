@@ -1,6 +1,6 @@
 {
   "name": "yelp-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A JavaScript interface for the Yelp Fusion API.",
   "main": "yelp-api.js",
   "scripts": {
