@@ -46,6 +46,6 @@ var yelpAPI = class yelpAPI {
 
 	}
 
-}
+};
 
 module.exports = yelpAPI;
