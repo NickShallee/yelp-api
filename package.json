@@ -1,10 +1,14 @@
 {
   "name": "yelp-api",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A JavaScript interface for the Yelp Fusion API.",
   "main": "yelp-api.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com//NickShallee/yelp-api.git"
   },
   "keywords": [
     "yelp",
