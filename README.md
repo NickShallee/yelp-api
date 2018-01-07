@@ -1,87 +1,122 @@
-# Project Title
+# yelp-api
+===
+This package provides a programmatic JavaScript interface for the Yelp Fusion API.  The Yelp Fusion API Documentation can be viewed [here](https://www.yelp.com/developers/documentation/v3).
 
-One Paragraph of project description goes here
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+In order to use this package, you must first get a Yelp Fusion API Key.
 
 ### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+===
+Simple use NPM to install the package.
 
 ```
-Give the example
+npm install yelp-api --save
 ```
 
-And repeat
+## Usage
+===
+
+The Yelp Fusion API has many API endpoints.  Below shows how to query each of them.  Reference links for each endpoint are also provided.
+
+To query any of these endpoints, you must get your API Key from the Yelp Fusion Manage App page, located [here](https://www.yelp.com/developers/v3/manage_app).
+
+### Search API
+This endpoint returns up to 1000 businesses based on the provided search criteria.  More details [here](https://www.yelp.com/developers/documentation/v3/business_search).
+
+```javascript
+// Create a new yelpAPI object with your API key
+let apiKey = 'YOUR_API_KEY';
+let yelp = new yelpAPI(apiKey);
+
+// Set any parameters, if applicable (see API documentation for allowed params)
+let params = [
+		{ location: '20008' }
+	];
+
+// Call the endpoint
+yelp.query('businesses/search', params)
+.then(data => {
+    // Success
+	console.log(data);
+})
+.catch(err => {
+    // Failure
+	console.log(err);
+});
 
 ```
-until finished
-```
 
-End with an example of getting some data out of the system or using it for a little demo
+### Phone Search API
+This endpoint returns a list of businesses based on the provided phone number.  More details [here](https://www.yelp.com/developers/documentation/v3/business_search_phone).
 
-## Running the tests
+businesses/search/phone
 
-Explain how to run the automated tests for this system
+### Transaction Search API
+This endpoint returns a list of businesses which support certain transactions.  More details [here](https://www.yelp.com/developers/documentation/v3/transactions_search).
 
-### Break down into end to end tests
+transactions/{transaction_type}/search
 
-Explain what these tests test and why
+### Business API
+This endpoint returns the detail information of a business.  More details [here](https://www.yelp.com/developers/documentation/v3/business).
 
-```
-Give an example
-```
+businesses/{id}
 
-### And coding style tests
+## Business Match API
+Thess endpoints let you match business data from other sources against our businesses based on some minimal information provided.  To enable this endpoint, you must first join the Yelp Developer Beta Program.  More details [here](https://www.yelp.com/developers/documentation/v3/business_match).
 
-Explain what these tests test and why
+businesses/matches/best
+businesses/matches/lookupbusinesses/{id}/reviews
 
-```
-Give an example
-```
+### Reviews API
+This endpoint returns up to three reviews of a business ordered by Yelp's default sort order.  More details [here](https://www.yelp.com/developers/documentation/v3/business_reviews).
 
-## Deployment
+/businesses/{id}/reviews
 
-Add additional notes about how to deploy this on a live system
+### Autocomplete API
+This endpoint returns autocomplete suggestions for search keywords, businesses and categories, based on the input text.  More details [here](https://www.yelp.com/developers/documentation/v3/autocomplete).
 
-## Built With
+autocomplete
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+### Event Lookup API
+This endpoint returns the detailed information of a Yelp event.  To enable this endpoint, you must first join the Yelp Developer Beta Program.  More details [here](https://www.yelp.com/developers/documentation/v3/event).
+
+events/{id}
+
+### Event Search API
+This endpoint returns events based on the provided search criteria.  To enable this endpoint, you must first join the Yelp Developer Beta Program.  More details [here](https://www.yelp.com/developers/documentation/v3/event_search).
+
+events
+
+### Featured Event API
+This endpoint returns the featured event for a given location.  To enable this endpoint, you must first join the Yelp Developer Beta Program.  More details [here](https://www.yelp.com/developers/documentation/v3/featured_event).
+
+events/featured
+
+*/
+
+yelp.query('businesses/search', [{ location: '22206' }])
+.then(data => {
+	console.log(data);
+})
+.catch(err => {
+	con
+
 
 ## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+===
+I would very much appreciate your contributions to this project  Make any pull requests on the [GitHub repo](https://github.com/NickShallee/yelp-api).
 
 ## Authors
+===
+* **Nick Shallee** - [AureliaCasts](https://aureliacasts.com)
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+See also the list of [contributors](https://github.com/NickShallee/yelp-api/contributors) who participated in this project.
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+## License (MIT)
+===
+Copyright 2018 Nick Shallee
 
-## License
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
