@@ -19,6 +19,8 @@ To query any of these endpoints, you must get your API Key from the Yelp Fusion 
 This endpoint returns up to 1000 businesses based on the provided search criteria.  More details [here](https://www.yelp.com/developers/documentation/v3/business_search).
 
 ```javascript
+let yelpAPI = require('yelp-api');
+
 // Create a new yelpAPI object with your API key
 let apiKey = 'YOUR_API_KEY';
 let yelp = new yelpAPI(apiKey);
@@ -42,6 +44,8 @@ yelp.query('businesses/search', params)
 This endpoint returns a list of businesses based on the provided phone number.  More details [here](https://www.yelp.com/developers/documentation/v3/business_search_phone).
 
 ```javascript
+let yelpAPI = require('yelp-api');
+
 // Create a new yelpAPI object with your API key
 let apiKey = 'YOUR_API_KEY';
 let yelp = new yelpAPI(apiKey);
@@ -65,6 +69,8 @@ yelp.query('businesses/search/phone', params)
 This endpoint returns a list of businesses which support certain transactions.  More details [here](https://www.yelp.com/developers/documentation/v3/transactions_search).
 
 ```javascript
+let yelpAPI = require('yelp-api');
+
 // Create a new yelpAPI object with your API key
 let apiKey = 'YOUR_API_KEY';
 let yelp = new yelpAPI(apiKey);
@@ -89,6 +95,8 @@ yelp.query(`transactions/${transactionType}/search`, params)
 This endpoint returns the detail information of a business.  More details [here](https://www.yelp.com/developers/documentation/v3/business).
 
 ```javascript
+let yelpAPI = require('yelp-api');
+
 // Create a new yelpAPI object with your API key
 let apiKey = 'YOUR_API_KEY';
 let yelp = new yelpAPI(apiKey);
@@ -114,6 +122,8 @@ Thess endpoints let you match business data from other sources against our busin
 
 #### Best Match
 ```javascript
+let yelpAPI = require('yelp-api');
+
 // Create a new yelpAPI object with your API key
 let apiKey = 'YOUR_API_KEY';
 let yelp = new yelpAPI(apiKey);
@@ -140,6 +150,8 @@ yelp.query('businesses/matches/best', params)
 
 #### Lookup
 ```javascript
+let yelpAPI = require('yelp-api');
+
 // Create a new yelpAPI object with your API key
 let apiKey = 'YOUR_API_KEY';
 let yelp = new yelpAPI(apiKey);
@@ -168,6 +180,8 @@ yelp.query('businesses/matches/lookup', params)
 This endpoint returns up to three reviews of a business ordered by Yelp's default sort order.  More details [here](https://www.yelp.com/developers/documentation/v3/business_reviews).
 
 ```javascript
+let yelpAPI = require('yelp-api');
+
 // Create a new yelpAPI object with your API key
 let apiKey = 'YOUR_API_KEY';
 let yelp = new yelpAPI(apiKey);
@@ -192,6 +206,8 @@ yelp.query(`businesses/${businessId}/reviews`, params)
 This endpoint returns autocomplete suggestions for search keywords, businesses and categories, based on the input text.  More details [here](https://www.yelp.com/developers/documentation/v3/autocomplete).
 
 ```javascript
+let yelpAPI = require('yelp-api');
+
 // Create a new yelpAPI object with your API key
 let apiKey = 'YOUR_API_KEY';
 let yelp = new yelpAPI(apiKey);
@@ -215,6 +231,8 @@ yelp.query('autocomplete', params)
 This endpoint returns the detailed information of a Yelp event.  To enable this endpoint, you must first join the Yelp Developer Beta Program.  More details [here](https://www.yelp.com/developers/documentation/v3/event).
 
 ```javascript
+let yelpAPI = require('yelp-api');
+
 // Create a new yelpAPI object with your API key
 let apiKey = 'YOUR_API_KEY';
 let yelp = new yelpAPI(apiKey);
@@ -239,6 +257,8 @@ yelp.query(`events/${eventId}`, params)
 This endpoint returns events based on the provided search criteria.  To enable this endpoint, you must first join the Yelp Developer Beta Program.  More details [here](https://www.yelp.com/developers/documentation/v3/event_search).
 
 ```javascript
+let yelpAPI = require('yelp-api');
+
 // Create a new yelpAPI object with your API key
 let apiKey = 'YOUR_API_KEY';
 let yelp = new yelpAPI(apiKey);
@@ -262,6 +282,8 @@ yelp.query('events', params)
 This endpoint returns the featured event for a given location.  To enable this endpoint, you must first join the Yelp Developer Beta Program.  More details [here](https://www.yelp.com/developers/documentation/v3/featured_event).
 
 ```javascript
+let yelpAPI = require('yelp-api');
+
 // Create a new yelpAPI object with your API key
 let apiKey = 'YOUR_API_KEY';
 let yelp = new yelpAPI(apiKey);
