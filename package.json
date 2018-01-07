@@ -17,8 +17,10 @@
   "author": "Nick Shallee (nick@aureliacasts.com)",
   "license": "MIT",
   "dependencies": {
-    "jshint": "^2.9.5",
     "request": "^2.83.0",
     "requirejs": "^2.3.5"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.5"
   }
 }
