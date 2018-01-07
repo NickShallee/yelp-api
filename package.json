@@ -2,7 +2,7 @@
   "name": "yelp-api",
   "version": "0.1.0",
   "description": "A JavaScript interface for the Yelp Fusion API.",
-  "main": "index.js",
+  "main": "yelp-api.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,7 @@
     "yelp",
     "api"
   ],
-  "author": "",
+  "author": "Nick Shallee (nick@aureliacasts.com)",
   "license": "MIT",
   "dependencies": {
     "request": "^2.83.0",

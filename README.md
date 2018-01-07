@@ -36,34 +36,159 @@ yelp.query('businesses/search', params)
   // Failure
   console.log(err);
 });
-
 ```
 
 ### Phone Search API
 This endpoint returns a list of businesses based on the provided phone number.  More details [here](https://www.yelp.com/developers/documentation/v3/business_search_phone).
 
-businesses/search/phone
+```javascript
+// Create a new yelpAPI object with your API key
+let apiKey = 'YOUR_API_KEY';
+let yelp = new yelpAPI(apiKey);
+
+// Set any parameters, if applicable (see API documentation for allowed params)
+let params = [{ phone: '+14159083801' }];
+
+// Call the endpoint
+yelp.query('businesses/search/phone', params)
+.then(data => {
+  // Success
+  console.log(data);
+})
+.catch(err => {
+  // Failure
+  console.log(err);
+});
+```
 
 ### Transaction Search API
 This endpoint returns a list of businesses which support certain transactions.  More details [here](https://www.yelp.com/developers/documentation/v3/transactions_search).
 
-transactions/{transaction_type}/search
+```javascript
+// Create a new yelpAPI object with your API key
+let apiKey = 'YOUR_API_KEY';
+let yelp = new yelpAPI(apiKey);
+
+// Set any parameters, if applicable (see API documentation for allowed params)
+let transactionType = 'delivery';
+let params = [{ location: '20002' }];
+
+// Call the endpoint
+yelp.query(`transactions/${transactionType}/search`, params)
+.then(data => {
+  // Success
+  console.log(data);
+})
+.catch(err => {
+  // Failure
+  console.log(err);
+});
+```
 
 ### Business API
 This endpoint returns the detail information of a business.  More details [here](https://www.yelp.com/developers/documentation/v3/business).
 
 businesses/{id}
 
-## Business Match API
+```javascript
+// Create a new yelpAPI object with your API key
+let apiKey = 'YOUR_API_KEY';
+let yelp = new yelpAPI(apiKey);
+
+// Set any parameters, if applicable (see API documentation for allowed params)
+let businessId = 'four-barrel-coffee-san-francisco';
+let params = [{ locale: 'en_US' }];
+
+// Call the endpoint
+yelp.query(`businesses/${businessId}`, params)
+.then(data => {
+  // Success
+  console.log(data);
+})
+.catch(err => {
+  // Failure
+  console.log(err);
+});
+```
+
+### Business Match API
 Thess endpoints let you match business data from other sources against our businesses based on some minimal information provided.  To enable this endpoint, you must first join the Yelp Developer Beta Program.  More details [here](https://www.yelp.com/developers/documentation/v3/business_match).
 
-businesses/matches/best
-businesses/matches/lookupbusinesses/{id}/reviews
+#### Best Match
+```javascript
+// Create a new yelpAPI object with your API key
+let apiKey = 'YOUR_API_KEY';
+let yelp = new yelpAPI(apiKey);
+
+// Set any parameters, if applicable (see API documentation for allowed params)
+let params = [
+  { name: 'Four Barrel Coffee' }, 
+  { city: 'San Francisco' }, 
+  { state: 'CA' },
+  { country: 'US' }
+];
+
+// Call the endpoint
+yelp.query('businesses/matches/best', params)
+.then(data => {
+  // Success
+  console.log(data);
+})
+.catch(err => {
+  // Failure
+  console.log(err);
+});
+```
+
+#### Lookup
+```javascript
+// Create a new yelpAPI object with your API key
+let apiKey = 'YOUR_API_KEY';
+let yelp = new yelpAPI(apiKey);
+
+// Set any parameters, if applicable (see API documentation for allowed params)
+let params = [
+  { name: 'Four Barrel Coffee' }, 
+  { city: 'San Francisco' }, 
+  { state: 'CA' },
+  { country: 'US' }
+];
+
+// Call the endpoint
+yelp.query('businesses/matches/lookup', params)
+.then(data => {
+  // Success
+  console.log(data);
+})
+.catch(err => {
+  // Failure
+  console.log(err);
+});
+```
 
 ### Reviews API
 This endpoint returns up to three reviews of a business ordered by Yelp's default sort order.  More details [here](https://www.yelp.com/developers/documentation/v3/business_reviews).
 
-/businesses/{id}/reviews
+```javascript
+// Create a new yelpAPI object with your API key
+let apiKey = 'YOUR_API_KEY';
+let yelp = new yelpAPI(apiKey);
+
+// Set any parameters, if applicable (see API documentation for allowed params)
+let params = [{ locale: 'en_US' }];
+let businessId = 'four-barrel-coffee-san-francisco';
+
+// Call the endpoint
+yelp.query(`/businesses/${businessId}/reviews`, params)
+.then(data => {
+  // Success
+  console.log(data);
+})
+.catch(err => {
+  // Failure
+  console.log(err);
+});
+```
 
 ### Autocomplete API
 This endpoint returns autocomplete suggestions for search keywords, businesses and categories, based on the input text.  More details [here](https://www.yelp.com/developers/documentation/v3/autocomplete).
@@ -84,15 +209,6 @@ events
 This endpoint returns the featured event for a given location.  To enable this endpoint, you must first join the Yelp Developer Beta Program.  More details [here](https://www.yelp.com/developers/documentation/v3/featured_event).
 
 events/featured
-
-*/
-
-yelp.query('businesses/search', [{ location: '22206' }])
-.then(data => {
-	console.log(data);
-})
-.catch(err => {
-	con
 
 
 ## Contributing
