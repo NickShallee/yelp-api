@@ -1,11 +1,9 @@
 # yelp-api
-===
 This package provides a programmatic JavaScript interface for the Yelp Fusion API.  The Yelp Fusion API Documentation can be viewed [here](https://www.yelp.com/developers/documentation/v3).
 
 In order to use this package, you must first get a Yelp Fusion API Key.
 
 ### Installing
-===
 Simple use NPM to install the package.
 
 ```
@@ -13,8 +11,6 @@ npm install yelp-api --save
 ```
 
 ## Usage
-===
-
 The Yelp Fusion API has many API endpoints.  Below shows how to query each of them.  Reference links for each endpoint are also provided.
 
 To query any of these endpoints, you must get your API Key from the Yelp Fusion Manage App page, located [here](https://www.yelp.com/developers/v3/manage_app).
@@ -28,19 +24,17 @@ let apiKey = 'YOUR_API_KEY';
 let yelp = new yelpAPI(apiKey);
 
 // Set any parameters, if applicable (see API documentation for allowed params)
-let params = [
-		{ location: '20008' }
-	];
+let params = [{ location: '20008' }];
 
 // Call the endpoint
 yelp.query('businesses/search', params)
 .then(data => {
-    // Success
-	console.log(data);
+  // Success
+  console.log(data);
 })
 .catch(err => {
-    // Failure
-	console.log(err);
+  // Failure
+  console.log(err);
 });
 
 ```
@@ -102,17 +96,14 @@ yelp.query('businesses/search', [{ location: '22206' }])
 
 
 ## Contributing
-===
 I would very much appreciate your contributions to this project  Make any pull requests on the [GitHub repo](https://github.com/NickShallee/yelp-api).
 
 ## Authors
-===
 * **Nick Shallee** - [AureliaCasts](https://aureliacasts.com)
 
 See also the list of [contributors](https://github.com/NickShallee/yelp-api/contributors) who participated in this project.
 
 ## License (MIT)
-===
 Copyright 2018 Nick Shallee
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
