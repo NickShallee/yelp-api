@@ -1,4 +1,4 @@
-/*jshint esversion: 6 */ 
+/*jshint esversion: 6 */
 
 var request = require('request');
 
@@ -37,14 +37,14 @@ var yelpAPI = class yelpAPI {
 	stringifyParams(params) {
 
 		var urlParams = '?';
-		
+
 		params.forEach(function(param) {
 			Object.keys(param).forEach(function (key) {
 				urlParams += '&' + key + '=' + param[key];
 			});
 		});
 
-		return urlParams;
+		return encodeURI(urlParams);
 
 	}
 
